@@ -17,13 +17,14 @@ export default function Detail({
 
   return (
     <div className={styles.container}>
+      <h1>{data?.brand}</h1>
       <Image
         src={data?.thumbnail || ''}
         alt="thumbnail"
-        width={300}
-        height={300}
+        width={310}
+        height={310}
       />
-      <h1>{data?.brand}</h1>
+
       <p>{data?.description}</p>
     </div>
   )

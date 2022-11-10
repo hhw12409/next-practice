@@ -5,3 +5,10 @@
   align-items: center;
   justify-content: center;
 }
+
+.container > h1 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
