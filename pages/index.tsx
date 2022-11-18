@@ -1,30 +1,30 @@
-import styles from '../styles/Home.module.css'
-import Image from 'next/image'
-import { InferGetServerSidePropsType, GetServerSideProps } from 'next'
-import React from 'react'
-import Link from 'next/link'
+import styles from '../styles/Home.module.css';
+import Image from 'next/image';
+import { InferGetServerSidePropsType, GetServerSideProps } from 'next';
+import React from 'react';
+import Link from 'next/link';
 
 export interface IData {
-  id: number
-  title: string
-  description: string
-  price: number
-  discountPercentage: number
-  brand: string
-  category: string
-  thumbnail: string
-  images: string[]
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  rating: number;
+  stock: number;
+  discountPercentage: number;
+  brand: string;
+  category: string;
+  thumbnail: string;
+  images: string[];
 }
 
-export default function Home({
-  res,
-}: InferGetServerSidePropsType<GetServerSideProps>) {
-  const [data, setData] = React.useState<IData[]>()
+export default function Home({ res }: InferGetServerSidePropsType<GetServerSideProps>) {
+  const [data, setData] = React.useState<IData[]>();
   React.useEffect(() => {
     if (res !== undefined) {
-      setData(res.products)
+      setData(res.products);
     }
-  }, [res])
+  }, [res]);
 
   return (
     <div className={styles.container}>
@@ -43,14 +43,14 @@ export default function Home({
         </div>
       ))}
     </div>
-  )
+  );
 }
 
 export async function getServerSideProps() {
-  const res = await (await fetch('https://dummyjson.com/products')).json()
+  const res = await (await fetch('https://dummyjson.com/products')).json();
   return {
     props: {
       res,
     },
-  }
+  };
 }
