@@ -5,6 +5,7 @@
 }
 
 .container > span {
+  font-weight: 600;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,4 +20,18 @@
 
 .item_thumbnail {
   border-radius: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+@media (min-width: 768px) {
+  .item_thumbnail {
+    width: 350px;
+    height: 350px;
+  }
+  .item_container span {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
 }

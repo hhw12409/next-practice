@@ -9,3 +9,12 @@
   font-size: 30px;
   font-weight: 700;
 }
+
+@media (min-width: 768px) {
+  .container {
+    margin-bottom: 100px;
+  }
+  .container > h1 {
+    font-size: 80px;
+  }
+}
